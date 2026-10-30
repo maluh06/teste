@@ -1,0 +1,92 @@
+[
+  {
+    "ContainingType": "SistemaEstoque.Controllers.EstoqueController",
+    "Method": "CadastrarFornecedor",
+    "RelativePath": "api/Estoque/CadastrarFornecedor",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "fornecedor",
+        "Type": "SistemaEstoque.Model.Entidades.Fornecedor",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "SistemaEstoque.Controllers.EstoqueController",
+    "Method": "CadastrarProduto",
+    "RelativePath": "api/Estoque/CadastrarProduto",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "produto",
+        "Type": "SistemaEstoque.Model.Entidades.AdicionarProduto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "SistemaEstoque.Controllers.EstoqueController",
+    "Method": "ConsultarProduto",
+    "RelativePath": "api/Estoque/ConsultarProduto/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "SistemaEstoque.Controllers.EstoqueController",
+    "Method": "PutRegistrarEntrada",
+    "RelativePath": "api/Estoque/ResgistraEntrada",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "quantidade",
+        "Type": "System.Int32",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "SistemaEstoque.Controllers.EstoqueController",
+    "Method": "PutRegistrarSaida",
+    "RelativePath": "api/Estoque/ResgistraSaida",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "quantidade",
+        "Type": "System.Int32",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  }
+]

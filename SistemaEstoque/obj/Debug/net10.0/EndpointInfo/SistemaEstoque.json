@@ -1,0 +1,242 @@
+{
+  "openapi": "3.0.4",
+  "info": {
+    "title": "SistemaEstoque",
+    "version": "1.0"
+  },
+  "paths": {
+    "/api/Estoque/ConsultarProduto/{id}": {
+      "get": {
+        "tags": [
+          "Estoque"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Estoque/CadastrarFornecedor": {
+      "post": {
+        "tags": [
+          "Estoque"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Fornecedor"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Fornecedor"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/Fornecedor"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Estoque/CadastrarProduto": {
+      "post": {
+        "tags": [
+          "Estoque"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/AdicionarProduto"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/AdicionarProduto"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/AdicionarProduto"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Estoque/ResgistraEntrada": {
+      "put": {
+        "tags": [
+          "Estoque"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "quantidade",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Estoque/ResgistraSaida": {
+      "put": {
+        "tags": [
+          "Estoque"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "quantidade",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "AdicionarProduto": {
+        "required": [
+          "categoria",
+          "estoqueMinimo",
+          "fornecedor",
+          "nome",
+          "precoCusto",
+          "precoVenda",
+          "quantidade"
+        ],
+        "type": "object",
+        "properties": {
+          "nome": {
+            "minLength": 1,
+            "type": "string"
+          },
+          "precoCusto": {
+            "type": "number",
+            "format": "double"
+          },
+          "quantidade": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "fornecedor": {
+            "$ref": "#/components/schemas/Fornecedor"
+          },
+          "categoria": {
+            "$ref": "#/components/schemas/Categorias"
+          },
+          "precoVenda": {
+            "type": "number",
+            "format": "double"
+          },
+          "estoqueMinimo": {
+            "type": "integer",
+            "format": "int32"
+          }
+        },
+        "additionalProperties": false
+      },
+      "Categorias": {
+        "enum": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "type": "integer",
+        "format": "int32"
+      },
+      "Fornecedor": {
+        "required": [
+          "cnpj",
+          "email",
+          "nome",
+          "telefone"
+        ],
+        "type": "object",
+        "properties": {
+          "nome": {
+            "minLength": 1,
+            "type": "string"
+          },
+          "cnpj": {
+            "minLength": 1,
+            "type": "string"
+          },
+          "telefone": {
+            "minLength": 1,
+            "type": "string"
+          },
+          "email": {
+            "minLength": 1,
+            "type": "string"
+          }
+        },
+        "additionalProperties": false
+      }
+    }
+  },
+  "tags": [
+    {
+      "name": "Estoque"
+    }
+  ]
+}
